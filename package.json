@@ -10,14 +10,22 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.helloWorld",
+		"onCommand:extension.posable"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"title": "Hello Brain",
+				"args": [
+					"${file}"
+				]
+			},
+			{
+				"command": "extension.posable",
+				"title": "The Time"
 			}
 		]
 	},
@@ -39,5 +47,10 @@
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.2.0"
 	},
-	"publisher": "sproutdeveloping"
+	"publisher": "sproutdeveloping",
+	"dependencies": {
+		"child_process": "^1.0.2",
+		"fs-extra": "^8.1.0",
+		"kill-port": "^1.6.0"
+	}
 }
