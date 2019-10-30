@@ -75,7 +75,6 @@ export function activate(context: vscode.ExtensionContext) {
 		const target = data.slice(lookup+11+disp,lookup+15+disp)
 			
 		// in the core of our function, we run a special command that finds and kills the port specified
-		// note we are still in the try block
 		setTimeout(function(){
 			terminal2.stdin.write('kill $(lsof -t -i:'+target+')\n');
 			terminal2.stdin.end();
