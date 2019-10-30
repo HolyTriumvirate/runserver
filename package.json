@@ -10,22 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld",
-		"onCommand:extension.posable"
+		"onCommand:extension.serverOn",
+		"onCommand:extension.serverOff"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello Brain",
-				"args": [
-					"${file}"
-				]
+				"command": "extension.serverOn",
+				"title": "Current File Server On"
 			},
 			{
-				"command": "extension.posable",
-				"title": "The Time"
+				"command": "extension.serverOff",
+				"title": "Current File Server Off"
 			}
 		]
 	},
