@@ -23,7 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
-		var temp = vscode.window.activeTextEditor.document.fileName;
+
+		
+
+		var temp = vscode.window.activeTextEditor!.document.fileName;
 		//alternatively
 		// vscode.workspace.workspaceFolders[0].uri.toString().split(":")[1];
 		//see https://www.youtube.com/watch?v=OhfOcqSU62g&t=535s timestamp 10:33
@@ -49,11 +52,11 @@ export function activate(context: vscode.ExtensionContext) {
 		//console.log(data);//check
 		console.log("base:", base)
 
-		terminal.stdout.on('data', function (data) {
+		terminal.stdout.on('data', function (data: any) {
 			console.log('stdout: ' + data);
 		});
 		
-		terminal.on('exit', function (code) {
+		terminal.on('exit', function (code: any) {
 			console.log('child process exited with code ' + code);
 		});
 		
@@ -104,7 +107,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 
-		var temp = vscode.window.activeTextEditor.document.fileName;
+		var temp = vscode.window.activeTextEditor!.document.fileName;
 		//alternatively
 		// vscode.workspace.workspaceFolders[0].uri.toString().split(":")[1];
 		//see https://www.youtube.com/watch?v=OhfOcqSU62g&t=535s timestamp 10:33
@@ -112,11 +115,11 @@ export function activate(context: vscode.ExtensionContext) {
 		var base = path.dirname(temp);
 		console.log(temp, "second run alarm");
 
-		terminal2.stdout.on('data', function (data) {
+		terminal2.stdout.on('data', function (data: any) {
 			console.log('stdout: ' + data);
 		});
 		
-		terminal2.on('exit', function (code) {
+		terminal2.on('exit', function (code: any) {
 			console.log('child process exited with code ' + code);
 		});
 
@@ -171,3 +174,5 @@ export function deactivate() {}
 // npm install -g vsce@latest
 
 //tried deleting all packages and reinstalling
+
+//non null-assertion operator for error ts2532 on window
