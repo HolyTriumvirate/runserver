@@ -162,3 +162,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() {}
+
+
+// publish fix not really
+// npm install -g node@latest
+// npm install -g npm@latest
+// npm install -g vscode@latest
+// npm install -g vsce@latest
