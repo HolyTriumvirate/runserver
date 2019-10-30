@@ -169,3 +169,5 @@ export function deactivate() {}
 // npm install -g npm@latest
 // npm install -g vscode@latest
 // npm install -g vsce@latest
+
+//tried deleting all packages and reinstalling
